@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<% include ./parts/head.ejs %>
+
+<body>
+    <%include ./parts/navi.ejs %>
+
+    <main class="container mt-5 ">
+        <div class="row justify-content-around">
+
+            <!-- DODAWANIE TASKA -->
+            <div class="col-12 card shadow-lg">
+                <h3>Nowe wydarzenie:</h3>
+                <hr>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Tytuł</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="title" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3 ">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">Start</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="start" aria-describedby="basic-addon1">
+                    <div class="input-group-prepend ml-1">
+                        <span class="input-group-text" id="basic-addon1">Koniec</span>
+                    </div>
+                    <input type="text" class="form-control" aria-label="end" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Opis wydarzenia</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                </div>
+                <button class='btn btn-dark col-2 mt-3'>Dodaj! <i class="fas fa-plus"></i></button>
+
+            </div>
+
+
+
+    </main>
+
+    <% include ./parts/scripts.ejs %>
+</body>
+
+</html>
