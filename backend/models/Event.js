@@ -38,7 +38,7 @@ function validateEvent(event){
         end: Joi.date().required(),
         description: Joi.string().max(255).required()
         
-    }
+    };
     return Joi.validate(event, schema);
 }
 exports.Event = Event; 

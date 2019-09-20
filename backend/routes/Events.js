@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const _ = require('lodash');
-const { User } = require('../models/User.js')
+const { User } = require('../models/User.js');
 const {Event, validate} = require('../models/Event.js');
+const auth=require('../middleware/auth');
+
+// router.use(auth)-tak czy wpisać auth bezpośrednio 
 
 router.get('/', async (req, res) => {
     const user = await User.findById(req.user._id);
