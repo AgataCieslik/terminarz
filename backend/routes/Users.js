@@ -4,8 +4,11 @@ const bcrypt = require('bcrypt');
 const _ = require('lodash');
 const {User, validate} = require('../models/User.js');
 
+const jwt = require('jsonwebtoken');
+const config = require('config');
+const auth=require('../middleware/auth');
 
-router.get('/me', async (req, res) => {
+router.get('/me',auth, async (req, res) => {
     const user = await User.findById(req.user._id).select('-password'); 
     res.send(user);
 })
@@ -22,7 +25,9 @@ router.post('/', async (req, res) =>{
     
     let user = await User.findOne({login: req.body.login});
     if(user)
-        return res.status(400).send("User with this login already exist");
+
+        return res.status(400).send("User with this login already exists.");
+
 
     user = new User(_.pick(req.body, ['login', 'password'] ));
 
@@ -30,8 +35,8 @@ router.post('/', async (req, res) =>{
     
     await user.save();
 
-    res.send(user);
-
+    const token = user.generateAuthToken();
+    res.header('x-auth-token', token).send(_.pick(user, ['_id','login']));
 
 });
 router.put('/:id', async (req,res)=>{
@@ -48,7 +53,9 @@ router.put('/:id', async (req,res)=>{
 
     if(!user)
     {
-        return RTCRtpSender.status(404).send('user with given id doent exist');
+
+        return RTCRtpSender.status(404).send('User with given id does not exist.');
+
     }
 
     await user.save();
