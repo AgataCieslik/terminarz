@@ -1,4 +1,4 @@
-//
+
 const config = require('config');
 //
 const express = require('express');
@@ -14,6 +14,7 @@ if (!config.get('jwtPrivateKey')) {
     console.error('FATAL ERROR: jwtPrivateKey is not defined.');
     process.exit(1);
   }
+
 /// PORTS 
 const port = process.env.PORT || 3000;
 const server = app.listen(port, () => console.log(`Listening on port ${port} ... `));
