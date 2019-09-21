@@ -1,0 +1,41 @@
+{
+  "name": "terminarz",
+  "version": "1.0.0",
+  "description": "Projekt 4. w ramach kursu CodersCamp [nazwa robocza]",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.6",
+    "express": "^4.17.1",
+    "helmet": "^3.21.0",
+    "joi": "^14.3.1",
+    "joi-objectid": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.7.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/czarny-kot/terminarz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/czarny-kot/terminarz/issues"
+  },
+  "homepage": "https://github.com/czarny-kot/terminarz#readme",
+  "devDependencies": {
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
+  }
+}
