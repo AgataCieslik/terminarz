@@ -13,9 +13,14 @@
 // app.use('/week', weekRouter);
 // app.use('/all', allRouter);
 
-import './APICommunication.js';
 import './public/stylesheets/style.css';
+import './APICommunication.js';
+import './functionalities.js';
 
 
+import * as APICommunication from './APICommunication.js';
+import * as functionalities from './functionalities';
 
-
+console.log('jestem w panelu logowania');
+const buttonEvent = document.getElementById('')
+console.log(buttonEvent);

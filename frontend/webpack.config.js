@@ -9,7 +9,8 @@ module.exports = {
         inline: true
     },
     entry: {
-        app: './src/app.js'
+        app: './src/app.js',
+        // new: './src/new.js'
     },
     output: {
         filename: '[name].js',
@@ -59,13 +60,13 @@ module.exports = {
     
     plugins: [
         new HtmlWebpackPlugin({
+            filename: 'all.html',
+            template: './src/all.html'
+        }),
+        new HtmlWebpackPlugin({
             filename: 'index.html',
             template: './src/index.html'
 
-        }),
-        new HtmlWebpackPlugin({
-            filename: 'all.html',
-            template: './src/all.html'
         }),
         new HtmlWebpackPlugin({
             filename: 'new.html',

@@ -6,9 +6,11 @@ const instance = axios.create({
     timeout: 5000
 })
 
-//const userId = "5d7c0dbc018fe733e477ab24";
-//
-//const events = getEvents(userId);
+// const userId = "5d7c0dbc018fe733e477ab24";
+
+// const events = getEvents(userId);
+// console.log(events);
+
 
 
 async function getEvents(Id){
@@ -66,8 +68,15 @@ document.getElementById("logButton").addEventListener('click', async (e) =>{
     // return 
 })
 
+
+function testowa(){
+    console.log('cokolwiek');
+}
+
 //Rejestracja
 
 async function CreateUser(login, password){
 
 }
+
+export {url, instance, getEvents, testowa}
