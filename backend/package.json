@@ -5,11 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node index.js"
-    },
-  "engines":{
-    "node":"10.16.3"
-    },
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "10.16.3"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -24,7 +24,7 @@
     "joi-objectid": "^2.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
-    "mongoose": "^5.7.0",
+    "mongoose": "^5.7.1",
     "morgan": "^1.9.1",
     "nodemon": "^1.19.2"
   }
