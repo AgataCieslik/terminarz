@@ -3,6 +3,11 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {resolve} = require('path');
 
 module.exports = {
+    devServer:{
+        port: 5500,
+        contentBase: './dist',
+        inline: true
+    },
     entry: {
         app: './src/app.js'
     },
