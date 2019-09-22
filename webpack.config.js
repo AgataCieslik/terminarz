@@ -54,7 +54,20 @@ module.exports = {
     
     plugins: [
         new HtmlWebpackPlugin({
+            filename: 'index.html',
             template: './frontend/index.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'all.html',
+            template: './frontend/all.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'new.html',
+            template: './frontend/new.html'
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'week.html',
+            template: './frontend/week.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css'
