@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { changePage } from './changePage.js';
 
 const log = (val) => console.log(val);
 
@@ -68,6 +69,8 @@ document.getElementById("logButton").addEventListener('click', async (e) =>{
         document.getElementById("logFailure").innerHTML = "";
         log(result.data);
         //przenieś do strony z wydarzeniami 
+        //nie działa póki nie mamy webpacka z brancha funkcjonalnosci
+      //  changePage("week");
     }
 })
 
@@ -95,6 +98,7 @@ document.getElementById("regButton").addEventListener('click', async (e)=>{
     {
         regFailure.innerHTML = "";
         //Zarejestroano poprawnie
+       // changePage("new");
     }
     log(result);
 
