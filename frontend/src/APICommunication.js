@@ -1,12 +1,16 @@
 import axios from 'axios';
 import { changePage } from './changePage.js';
+import jwt from 'jsonwebtoken';
+// import {getEvents} from './EventsMethods.js';
 
-const log = (val) => console.log(val);
+export const log = (val) => console.log(val);
 
+export let token;
+export let userId ;
 const url = "https://cors-anywhere.herokuapp.com/";
-const instance = axios.create({
+export const instance = axios.create({
     baseURL: url+'https://api-terminarz.herokuapp.com/api',
-    timeout: 5000
+    timeout: 1500
 })
 
 //const userId = "5d7c0dbc018fe733e477ab24";
@@ -14,12 +18,6 @@ const instance = axios.create({
 //const events = getEvents(userId);
 
 
-async function getEvents(Id){
-    const response = await instance.get(`/events/`,{
-
-    });
-    console.log(response);
-}
 
 async function ValidateUser(login, password, path){
     try{
@@ -67,10 +65,20 @@ document.getElementById("logButton").addEventListener('click', async (e) =>{
     if(result.status === 200)
     {
         document.getElementById("logFailure").innerHTML = "";
-        log(result.data);
+        
+        token = result.data;
+        log(token);
+        userId = jwt.decode(result.data)._id;
+        log(userId);
+        const res = await getEvents(userId);
+        log("ssss");
+        log(res);
+        // const events= await getEvents(userId);
+
+        // log(events);
         //przenieś do strony z wydarzeniami 
         //nie działa póki nie mamy webpacka z brancha funkcjonalnosci
-      //  changePage("week");
+        //changePage("new");
     }
 })
 
@@ -97,9 +105,20 @@ document.getElementById("regButton").addEventListener('click', async (e)=>{
     else if(result.status == 200)
     {
         regFailure.innerHTML = "";
+        userId = result.data._id;
         //Zarejestroano poprawnie
-       // changePage("new");
+        changePage("new");
     }
     log(result);
 
-})
+});
+
+async function getEvents(userID){
+    const response = await instance.get(`/events/${userID}`,{
+    // const response = await instance.get(`users/me`,{
+        headers:{
+            "x-auth-token": token
+        }
+    }); 
+    console.log(response);
+}

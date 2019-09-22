@@ -15,7 +15,8 @@
 
 import './APICommunication.js';
 import './public/stylesheets/style.css';
-import './changePage.js'
+import './changePage.js';
+import './EventsMethods.js';
 
 
 
