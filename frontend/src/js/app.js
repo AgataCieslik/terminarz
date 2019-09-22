@@ -15,8 +15,9 @@
 
 import '../public/stylesheets/style.css';
 import './APICommunication.js';
-import './functionalities.js';
 
+import './functionalities.js';
+import './changePage.js'
 
 import * as APICommunication from './APICommunication.js';
 import * as functionalities from './functionalities';
