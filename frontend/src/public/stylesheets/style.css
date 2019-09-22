@@ -85,3 +85,8 @@ li>a{
     color: rgb(117, 114, 114);
     padding: 10px;
 }
+.errInfo{
+    font-weight: bold;
+    font-size: 10;
+    color: #dd0000;
+}
