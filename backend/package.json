@@ -2,18 +2,24 @@
   "name": "terminarz",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+    },
+  "engines":{
+    "node":"10.16.3"
+    },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^3.0.6",
+    "compression": "^1.7.4",
     "config": "^3.2.2",
     "express": "^4.17.1",
-    "helmet": "^3.21.0",
+    "express-async-errors": "^3.1.1",
+    "helmet": "^3.21.1",
     "joi": "^14.3.1",
     "joi-objectid": "^2.0.0",
     "jsonwebtoken": "^8.5.1",

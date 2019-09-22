@@ -1,4 +1,4 @@
-
+// const winston = require('winston');
 const config = require('config');
 //
 const express = require('express');
@@ -9,7 +9,7 @@ const app = express();
 require('./startup/routes')(app);
 require('./startup/Database')();
 require('./startup/validation')();
-//nie jestem pewna czy to dobre miejsce na to
+require('./startup/prod')(app);
 if (!config.get('jwtPrivateKey')) {
     console.error('FATAL ERROR: jwtPrivateKey is not defined.');
     process.exit(1);
@@ -17,6 +17,7 @@ if (!config.get('jwtPrivateKey')) {
 
 /// PORTS 
 const port = process.env.PORT || 3000;
+// app.listen(port, () => winston.info(`Listening on port ${port}...`));
 const server = app.listen(port, () => console.log(`Listening on port ${port} ... `));
 
 module.exports = server;
