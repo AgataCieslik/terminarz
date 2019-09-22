@@ -4,7 +4,7 @@ const {resolve} = require('path');
 
 module.exports = {
     entry: {
-        app: './frontend/app.js'
+        app: './src/app.js'
     },
     output: {
         filename: '[name].js',
@@ -54,7 +54,7 @@ module.exports = {
     
     plugins: [
         new HtmlWebpackPlugin({
-            template: './frontend/index.html'
+            template: './src/index.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'style.css'

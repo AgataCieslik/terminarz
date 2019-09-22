@@ -4,8 +4,9 @@ const _ = require('lodash');
 const { User } = require('../models/User.js')
 const {Event, validate} = require('../models/Event.js');
 
-router.get('/', async (req, res) => {
-    const user = await User.findById(req.user._id);
+router.get('/:id', async (req, res) => {
+    console.log(req);
+    const user = await User.findById(req.params.id);
     if(!user)
     {
         return res.status(400).send("invalid user");

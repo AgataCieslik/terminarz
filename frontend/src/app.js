@@ -13,6 +13,9 @@
 // app.use('/week', weekRouter);
 // app.use('/all', allRouter);
 
+import './APICommunication.js';
 import './public/stylesheets/style.css';
+
+
 
 
