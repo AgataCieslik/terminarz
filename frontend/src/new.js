@@ -1,1 +1,0 @@
-console.log('jestem w new.html');
