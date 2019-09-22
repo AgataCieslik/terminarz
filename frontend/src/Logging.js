@@ -1,7 +1,9 @@
 import axios from 'axios';
 import { changePage } from './changePage.js';
 import jwt from 'jsonwebtoken';
-// import {getEvents} from './EventsMethods.js';
+
+import {ValidateUser} from './APICommunication/Users';
+//import {getEvents} from './EventsMethods.js';
 
 export const log = (val) => console.log(val);
 
@@ -13,43 +15,9 @@ export const instance = axios.create({
     timeout: 1500
 })
 
-//const userId = "5d7c0dbc018fe733e477ab24";
-//
-//const events = getEvents(userId);
 
 
-
-async function ValidateUser(login, password, path){
-    try{
-        const result = await instance.post(path,{
-            login,
-            password
-        });
-        return {
-            data: result.data, 
-            status: result.status
-        };
-    }
-    catch (err){
-        return false;
-    }
-}
 //Logowanie
-// async function CheckUser(login, password){
-//     try{
-//         const result = await instance.post('./auth',{
-//             login,
-//             password
-//         });
-//         return {
-//             data: result.data, 
-//             status: result.status
-//         };
-//     }
-//     catch (err){
-//         return false;
-//     }
-// }
 
 document.getElementById("logButton").addEventListener('click', async (e) =>{
     e.preventDefault();
@@ -67,18 +35,11 @@ document.getElementById("logButton").addEventListener('click', async (e) =>{
         document.getElementById("logFailure").innerHTML = "";
         
         token = result.data;
-        log(token);
         userId = jwt.decode(result.data)._id;
-        log(userId);
-        const res = await getEvents(userId);
-        log("ssss");
-        log(res);
-        // const events= await getEvents(userId);
-
-        // log(events);
+        
         //przenieś do strony z wydarzeniami 
         //nie działa póki nie mamy webpacka z brancha funkcjonalnosci
-        //changePage("new");
+        changePage("new");
     }
 })
 
@@ -113,12 +74,3 @@ document.getElementById("regButton").addEventListener('click', async (e)=>{
 
 });
 
-async function getEvents(userID){
-    const response = await instance.get(`/events/${userID}`,{
-    // const response = await instance.get(`users/me`,{
-        headers:{
-            "x-auth-token": token
-        }
-    }); 
-    console.log(response);
-}
