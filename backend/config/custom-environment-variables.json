@@ -1,3 +1,4 @@
 {
-    "jwtPrivateKey":"term_jwtPrivateKey"
+    "jwtPrivateKey":"term_jwtPrivateKey",
+    "db":"term_db"
 }
