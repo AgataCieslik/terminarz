@@ -7,10 +7,10 @@
         <title>Twój organizer!</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.10.2/css/all.css" integrity="sha384-rtJEYb85SiYWgfpCr0jn174XgJTn4rptSOQsMroFBPQSGLdOC5IbubP6lJ35qoM9" crossorigin="anonymous">
-        <link rel="stylesheet" href="./public/stylesheets/style.css">
     <link href="style.css" rel="stylesheet"></head>
 
 <body>
+    <div id="background"></div>
     <header class='container-fluid shadow-lg'>
         <div class="row myHeader justify-content-between mx-auto align-items-center p-3">
             <nav class='col-10'>
@@ -20,7 +20,7 @@
                     <li><a href="./all.html">WSZYSTKIE</a></li>
                 </ul>
             </nav>
-            <div class='col-2 '><button type='submit' class='btn btn-dark'><i class="fas fa-sign-out-alt"></i> Wyloguj się</button></div>
+            <div class='col-2' id="LogoutButton"><button type='submit' class='btn btn-dark'><i class="fas fa-sign-out-alt"></i> Wyloguj się</button></div>
     
         </div>
     </header>
@@ -34,27 +34,27 @@
                 <hr>
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Tytuł</span>
+                        <span class="input-group-text">Tytuł</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="title" aria-describedby="basic-addon1">
+                    <input type="text" id="newTitle" class="form-control" aria-label="title" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group mb-3 ">
                     <div class="input-group-prepend">
-                        <span class="input-group-text" id="basic-addon1">Start</span>
+                        <span class="input-group-text" >Start</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="start" aria-describedby="basic-addon1">
+                    <input type="date" id="newStart" class="form-control" aria-label="start" aria-describedby="basic-addon1">
                     <div class="input-group-prepend ml-1">
-                        <span class="input-group-text" id="basic-addon1">Koniec</span>
+                        <span class="input-group-text" >Koniec</span>
                     </div>
-                    <input type="text" class="form-control" aria-label="end" aria-describedby="basic-addon1">
+                    <input type="date" id="newStop" class="form-control" aria-label="end" aria-describedby="basic-addon1">
                 </div>
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">Opis wydarzenia</span>
                     </div>
-                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                    <textarea id="newDecscription" class="form-control" aria-label="With textarea"></textarea>
                 </div>
-                <button class='btn btn-dark col-2 mt-3'>Dodaj! <i class="fas fa-plus"></i></button>
+                <button class='btn btn-dark col-2 mt-3' id='dodaj'>Dodaj! <i class="fas fa-plus"></i></button>
 
             </div>
 
@@ -71,6 +71,8 @@ integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
 integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
-<script type="text/javascript" src="app.js"></script></body>
+<!-- <script src="./app.js"></script> -->
+<!-- <script src="new.js"></script> -->
+<script type="text/javascript" src="new.js"></script></body>
 
 </html>
