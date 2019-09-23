@@ -1,4 +1,4 @@
-import { instance } from "../Logging";
+import { instance } from "../js/Logging";
 
 export async function ValidateUser(login, password, path){
     try{

@@ -1,4 +1,4 @@
-import {userId,token, instance, log } from '../Logging.js';
+import {userId,token, instance, log } from '../js/Logging.js';
 
 export async function getEvents(userID){
     const response = await instance.get(`/events/${userID}`,{
