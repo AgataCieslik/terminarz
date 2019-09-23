@@ -2,7 +2,7 @@ import axios from 'axios';
 import { changePage } from './changePage.js';
 import jwt from 'jsonwebtoken';
 
-import {ValidateUser} from './APICommunication/Users';
+import {ValidateUser} from '../APICommunication/Users';
 //import {getEvents} from './EventsMethods.js';
 
 export const log = (val) => console.log(val);
