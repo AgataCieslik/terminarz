@@ -1,20 +1,11 @@
-import axios from 'axios';
 import { changePage } from './changePage.js';
 import jwt from 'jsonwebtoken';
-
 import {ValidateUser} from '../APICommunication/Users';
-//import {getEvents} from './EventsMethods.js';
 
 export const log = (val) => console.log(val);
 
 export let token;
-export let userId ;
-const url = "https://cors-anywhere.herokuapp.com/";
-export const instance = axios.create({
-    baseURL: url+'https://api-terminarz.herokuapp.com/api',
-    timeout: 1500
-})
-
+export let userId;
 
 
 //Logowanie
@@ -42,11 +33,6 @@ document.getElementById("logButton").addEventListener('click', async (e) =>{
         changePage("new");
     }
 })
-
-
-function testowa(){
-    console.log('cokolwiek');
-}
 
 //Rejestracja
 

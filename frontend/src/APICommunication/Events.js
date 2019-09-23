@@ -1,6 +1,6 @@
- import {token, instance, log } from '../js/Logging.js';
+ import {instance } from './axiosInstatnce';
 
-export async function getEvents(userID){
+export async function getEvents(userID, token){
     const response = await instance.get(`/events/${userID}`,{
         headers:{
             "x-auth-token": token

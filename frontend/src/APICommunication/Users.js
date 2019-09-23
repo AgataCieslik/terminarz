@@ -1,4 +1,4 @@
-import { instance } from "../js/Logging";
+import { instance } from "./axiosInstatnce";
 
 export async function ValidateUser(login, password, path){
     try{
