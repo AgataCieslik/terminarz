@@ -1,4 +1,4 @@
-import { instance } from "../Logging";
+import { instance} from "../Logging";
 
 export async function ValidateUser(login, password, path){
     try{
@@ -16,9 +16,9 @@ export async function ValidateUser(login, password, path){
     }
 }
 
-export async function GetCurrentUser(){
+export async function GetCurrentUser(token){
     try{
-        const result = await instance.get('./me',{
+        const result = await instance.get('./users/me',{
             headers:{
                 "x-auth-token": token
             }

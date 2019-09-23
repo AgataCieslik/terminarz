@@ -1,4 +1,4 @@
-import {userId,token, instance, log } from '../Logging.js';
+ import {token, instance, log } from '../Logging.js';
 
 export async function getEvents(userID){
     const response = await instance.get(`/events/${userID}`,{
@@ -9,11 +9,11 @@ export async function getEvents(userID){
     return response;
 }
 
-export async function addEvents (title, begin, end, description){
+export async function addEvents (userId, title, begin, end, description){
     try{
         const result = await instance.post('./events',{
             user: userId,
-            tilte,
+            title,
             begin,
             end,
             description
