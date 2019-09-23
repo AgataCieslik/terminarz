@@ -97,8 +97,6 @@ const mutualOptions = {
                         loader: MiniCssExtractPlugin.loader, 
                     },
                     'css-loader',
-
-                    
                 ]
             },
             {
