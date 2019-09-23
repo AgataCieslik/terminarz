@@ -3,9 +3,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const {resolve} = require('path');
 
 
-
-
-
 const indexTarget = {
     entry:{
         app: './src/js/app.js'
