@@ -128,6 +128,10 @@ const mutualOptions = {
         ],
         
     },
+    devtool: 'inline-source-map',
+    devServer:{
+        contentBase: './dist'
+    },
     
     // plugins: [
     //     new MiniCssExtractPlugin({

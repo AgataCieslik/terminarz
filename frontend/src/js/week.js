@@ -1,2 +1,6 @@
 import '../public/stylesheets/style.css';
-console.log('jestem w zakładce week');
+import * as functionalities from './functionalities.js';
+
+let eventList = functionalities.exampleList; //docelowo będzie pobierało z serwera!
+eventList.forEach()
+
