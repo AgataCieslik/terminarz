@@ -72,7 +72,7 @@ document.getElementById("logButton").addEventListener('click', async (e) =>{
         log(result.data);
         //przenieś do strony z wydarzeniami 
         //nie działa póki nie mamy webpacka z brancha funkcjonalnosci
-      //  changePage("week");
+      changePage("week");
     }
 })
 
@@ -105,7 +105,7 @@ document.getElementById("regButton").addEventListener('click', async (e)=>{
     {
         regFailure.innerHTML = "";
         //Zarejestroano poprawnie
-       // changePage("new");
+     changePage("new");
     }
     log(result);
 
