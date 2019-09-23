@@ -4,8 +4,8 @@ import {ValidateUser} from '../APICommunication/Users';
 
 export const log = (val) => console.log(val);
 
-export let token;
-export let userId;
+// export let token;
+// export let userId;
 
 
 //Logowanie
@@ -25,9 +25,15 @@ document.getElementById("logButton").addEventListener('click', async (e) =>{
     {
         document.getElementById("logFailure").innerHTML = "";
         
-        token = result.data;
-        userId = jwt.decode(result.data)._id;
-        
+        // token = result.data;
+        // userId = jwt.decode(result.data)._id;
+        const data = {
+            token: result.data, 
+            userId: jwt.decode(result.data)._id
+        };
+
+        localStorage.setItem('userData', JSON.stringify(data));
+
         //przenieś do strony z wydarzeniami 
         //nie działa póki nie mamy webpacka z brancha funkcjonalnosci
         changePage("new");
