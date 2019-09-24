@@ -1,4 +1,5 @@
 import '../public/stylesheets/style.css'
+import './LogOut';
 import * as Events from '../APICommunication/Events.js';
 
 const userData = JSON.parse(localStorage.getItem('userData'));
@@ -16,8 +17,6 @@ addEventButton.addEventListener('click', (e)=>{
         Events.addEvents(userId, newTitle, newStart, newStop, newDescription);
         newInfo.innerHTML = `Utworzono nowe wydarzenie: ${newTitle}`;
 })
-
-
 
 
 

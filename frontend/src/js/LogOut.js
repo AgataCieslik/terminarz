@@ -1,15 +1,13 @@
-
-function sth (){
+import { changePage } from './changePage.js';
+function logout (){
     const logout =  document.getElementById("LogoutButton");
-    const retrieve = localStorage.getItem('userData');
-    console.log(retrieve);
     if (logout)
     {
-        console.log("XD");
         logout.addEventListener('click', (e) =>{
             e.preventDefault();
-            console.log("jestem");
+            localStorage.removeItem("userData");
+            changePage("index");
         });
     }
 }
-sth();
+logout();
