@@ -98,3 +98,11 @@ li>a{
     font-size: 10;
     color: #dd0000;
 }
+
+/* all.thml */
+#eventDivDescription{
+    display: block;
+    margin: 10px;
+    width: calc(100% - 20px);
+    min-height: 30px;
+}

@@ -36,7 +36,7 @@ export async function removeEvent(eventId){
 }
 export async function updateEvent(eventId, title, begin, end, description){
     try{
-        const result = await instance.put(`./events${eventId}`,{
+        const result = await instance.put(`./events/${eventId}`,{
             title,
             begin, 
             end, 
