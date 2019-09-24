@@ -59,6 +59,9 @@ eventContainer.addEventListener('click',async (e)=>{
         const divToDelete = e.target.parentNode;
         divToDelete.parentNode.removeChild(divToDelete);
         Events.removeEvent(divToDelete.dataset.eventid)
+        // if(eventList.length === 0){
+        //     emptyList.style.display = 'inline';
+        // }
     }
 })
 
